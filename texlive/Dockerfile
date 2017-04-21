@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 RUN apt-get update
-RUN apt-get install -y wget locales perl
+RUN apt-get install -y wget locales perl libfontconfig
 RUN rm -rf /var/lib/apt/lists/*
 
 # UTF-8 locale
@@ -18,6 +18,3 @@ ADD texlive.profile .
 RUN ./install-tl/install-tl --persistent-downloads --profile=texlive.profile
 RUN rm install-tl.tar.gz && rm -r install-tl
 ENV PATH /usr/local/texlive/bin/x86_64-linux:$PATH
-RUN cp $(kpsewhich -var-value TEXMFSYSVAR)/fonts/conf/texlive-fontconfig.conf /etc/fonts/conf.d/09-texlive.conf
-RUN fc-cache -fsv
-CMD /bin/bash
