@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 RUN apt-get update
-RUN apt-get install -y wget locales perl libfontconfig
+RUN apt-get install -y wget curl locales perl libfontconfig
 RUN rm -rf /var/lib/apt/lists/*
 
 # UTF-8 locale
