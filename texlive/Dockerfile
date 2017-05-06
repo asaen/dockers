@@ -42,5 +42,4 @@ RUN apt-get update \
   && apt-get autoremove -y \
   && apt-get clean \
   && rm -rf /tmp/* /var/tmp/* \
-  && rm -rf /var/lib/apt/lists/* \
-  && rm -f /etc/ssh/ssh_host_*
+  && rm -rf /var/lib/apt/lists/*
