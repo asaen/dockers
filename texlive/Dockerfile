@@ -4,7 +4,6 @@ ENV PATH /usr/local/texlive/bin/x86_64-linux:$PATH
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends wget curl locales perl libfontconfig \
-  && rm -rf /var/lib/apt/lists/* \
 # set UTF-8 encoding
   && locale-gen en_US.UTF-8 \
   && export LANGUAGE=en_US.UTF-8 \
