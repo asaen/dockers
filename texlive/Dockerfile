@@ -29,9 +29,11 @@ RUN apt-get update \
   && ./install-tl/install-tl --persistent-downloads --profile=texlive.profile \
   && tlmgr install \
     collection-basic \
+    collection-bibtexextra \
     collection-fontsrecommended \
     collection-langcyrillic \
     collection-latex \
+    collection-latexextra \
     collection-latexrecommended \
     collection-xetex \
 # remove largest unused packages
