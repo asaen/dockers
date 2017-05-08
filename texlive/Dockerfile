@@ -36,6 +36,7 @@ RUN apt-get update \
     collection-latexextra \
     collection-latexrecommended \
     collection-xetex \
+    latexmk \
 # remove largest unused packages
   && tlmgr remove --force montex cbfonts koma-script \
   && rm -rf install-tl.tar.gz install-tl texlive.profile \
