@@ -1,3 +1,3 @@
-Ubuntu with TeXlive.
+Debian with TeXlive.
 
 [Docker image](https://hub.docker.com/r/darkled/texlive/)
