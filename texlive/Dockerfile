@@ -3,7 +3,14 @@ FROM ubuntu:16.04
 ENV PATH /usr/local/texlive/bin/x86_64-linux:$PATH
 
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends wget curl locales perl libfontconfig \
+  && apt-get install -y --no-install-recommends \
+    wget \
+    curl \
+    ca-certificates \
+    locales \
+    perl \
+    libfontconfig \
+  && update-ca-certificates \
 # set UTF-8 encoding
   && locale-gen en_US.UTF-8 \
   && export LANGUAGE=en_US.UTF-8 \
