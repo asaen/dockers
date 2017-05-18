@@ -37,10 +37,11 @@ RUN apt-get update \
     collection-latexrecommended \
     collection-xetex \
     latexmk \
-# remove largest unused packages
+# remove unused packages
   && tlmgr remove --force montex cbfonts koma-script \
-  && rm -rf install-tl.tar.gz install-tl texlive.profile \
+  && apt-get remove --purge wget curl ca-certificates
 # clean up all temporary files
+  && rm -rf install-tl.tar.gz install-tl texlive.profile \
   && apt-get autoclean -y \
   && apt-get autoremove -y \
   && apt-get clean \
