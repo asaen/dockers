@@ -1,4 +1,4 @@
-FROM ubuntu:17.04
+FROM bitnami/minideb
 
 ENV PATH /usr/local/texlive/bin/x86_64-linux:$PATH
 
