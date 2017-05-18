@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:17.04
 
 ENV PATH /usr/local/texlive/bin/x86_64-linux:$PATH
 
@@ -7,16 +7,9 @@ RUN apt-get update \
     wget \
     curl \
     ca-certificates \
-    locales \
     perl \
     libfontconfig \
   && update-ca-certificates \
-# set UTF-8 encoding
-  && locale-gen en_US.UTF-8 \
-  && export LANGUAGE=en_US.UTF-8 \
-  && export LC_ALL=en_US.UTF-8 \
-  && export LANG=en_US.UTF-8 \
-  && export LC_TYPE=en_US.UTF-8 \
 # create a profile
   && printf "%s\n" \
     "selected_scheme scheme-minimal" \
