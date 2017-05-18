@@ -39,7 +39,7 @@ RUN apt-get update \
     latexmk \
 # remove unused packages
   && tlmgr remove --force montex cbfonts koma-script \
-  && apt-get remove --purge wget curl ca-certificates
+  && apt-get remove --purge wget curl ca-certificates \
 # clean up all temporary files
   && rm -rf install-tl.tar.gz install-tl texlive.profile \
   && apt-get autoclean -y \
