@@ -7,7 +7,7 @@ ENV JAVA_VERSION_BUILD 11
 ENV JAVA_PACKAGE       jdk
 
 RUN apk --update add curl ca-certificates tar \
-    && curl -Ls https://circle-artifacts.com/gh/andyshinn/alpine-pkg-glibc/6/artifacts/0/home/ubuntu/alpine-pkg-glibc/packages/x86_64/glibc-2.21-r2.apk > /tmp/glibc-2.21-r2.apk \
+    && curl -Ls https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.25-r0/glibc-2.25-r0.apk > /tmp/glibc-2.21-r2.apk \
     && apk add --allow-untrusted /tmp/glibc-2.21-r2.apk \
     && mkdir /opt \
     && curl -jksSLH "Cookie: oraclelicense=accept-securebackup-cookie" \
