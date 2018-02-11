@@ -9,6 +9,9 @@ RUN apt-get update \
     ca-certificates \
     perl \
     libfontconfig \
+    fonts-linuxlibertine \
+    fonts-font-awesome \ 
+    gnupg \
   && update-ca-certificates \
 # create a profile
   && printf "%s\n" \
@@ -37,9 +40,11 @@ RUN apt-get update \
     collection-latexrecommended \
     collection-xetex \
     latexmk \
+    fontawesome \
+    babel-german \
 # remove unused packages
   && tlmgr remove --force montex cbfonts koma-script \
-  && apt-get remove --purge -y wget curl ca-certificates \
+#  && apt-get remove --purge -y wget curl ca-certificates \
 # clean up all temporary files
   && rm -rf install-tl.tar.gz install-tl texlive.profile \
   && apt-get autoclean -y \
